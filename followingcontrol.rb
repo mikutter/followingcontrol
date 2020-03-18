@@ -3,6 +3,8 @@
 require 'set'
 
 Plugin.create :followingcontrol do
+  UserConfig["retrieve_interval_followings"] ||= 60
+  UserConfig["retrieve_interval_followers"]  ||= 60
 
   counter = gen_counter
 
