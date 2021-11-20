@@ -74,8 +74,8 @@ Plugin.create :followingcontrol do
         events.each(&:detach) end
       container.add(userlist).show_all
     else
-      container.ssc_atonce :expose_event do
-        loading_image = Gtk::Image.new(Skin[:loading].pixbuf(width: 128, height: 128))
+      container.ssc_atonce :draw do
+        loading_image = Gtk::Image.new(pixbuf: Skin[:loading].pixbuf(width: 128, height: 128))
         container.add(loading_image.show_all)
         Enumerator.new{|y|
           Plugin.filtering(:worlds, y)
@@ -114,8 +114,8 @@ Plugin.create :followingcontrol do
         events.each(&:detach) end
       container.add(userlist).show_all
     else
-      container.ssc_atonce :expose_event do
-        loading_image = Gtk::Image.new(Skin[:loading].pixbuf(width: 128, height: 128))
+      container.ssc_atonce :draw do
+        loading_image = Gtk::Image.new(pixbuf: Skin[:loading].pixbuf(width: 128, height: 128))
         container.add(loading_image.show_all)
         Enumerator.new{|y|
           Plugin.filtering(:worlds, y)
